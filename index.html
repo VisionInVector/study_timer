@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Study Timer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <img src="https://i.ibb.co/5XK2tpCw/Shivam-01.png" alt="Shivam-01" border="0" width="100%">
+    <h1>Study Timer</h1>
+    <div class="timer" id="timer">25:00</div>
+    <div class="buttons">
+        <button onclick="startTimer()">Start</button>
+        <button onclick="pauseTimer()">Pause</button>
+        <button onclick="resetTimer()">Reset</button>
+    </div>
+    <div class="routine">
+        <h2>Daily Routine</h2>
+        <ul>
+            <li>Morning Reading</li>
+            <li>Math Practice</li>
+            <li>Coding Session</li>
+            <li>Evening Review</li>
+        </ul>
+            <h2>Daily Routine</h2>
+            <table id="studyTable" border="1">
+                <tr>
+                    <th>Task</th>
+                    <th>Start Time</th>
+                    <th>End Time</th>
+                </tr>
+            </table>
+            <button onclick="saveStudySession()">Save Session</button> 
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #f4f4f4;
+    padding: 20px;
+}
+
+.timer {
+    font-size: 48px;
+    margin: 20px;
+}
+
+.buttons button {
+    font-size: 20px;
+    margin: 10px;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+.routine {
+    margin-top: 20px;
+    font-size: 20px;
+}
