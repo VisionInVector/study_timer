@@ -1,58 +1,66 @@
-let timeLeft = 25 * 60;
-let timerInterval;
-let isRunning = false;
-
-function formatTime(seconds) {
-    let minutes = Math.floor(seconds / 60);
-    let secs = seconds % 60;
-    return `${minutes}:${secs < 10 ? "0" : ""}${secs}`;
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    padding: 20px;
 }
 
-function startTimer() {
-    if (!isRunning) {
-        isRunning = true;
-        timerInterval = setInterval(() => {
-            if (timeLeft > 0) {
-                timeLeft--;
-                document.getElementById("timer").innerText = formatTime(timeLeft);
-            } else {
-                clearInterval(timerInterval);
-                isRunning = false;
-                alert("Time's up! Take a break.");
-            }
-        }, 1000);
-    }
-}
-function pauseTimer() {
-    if (isRunning) {
-        clearInterval(timerInterval);
-        isRunning = false;
-    }
+.style {
+    background-color: rgb(56, 113, 211); 
+    width: 100%; 
+    padding: 90px;
+    background-size: cover; 
+    background-position: center; 
+    display: flex; 
+    justify-content: center; 
+    align-items: center;
 }
 
-function resetTimer() {
-    clearInterval(timerInterval);
-    isRunning = false;
-    timeLeft = 25 * 60;
-    document.getElementById("timer").innerText = formatTime(timeLeft);
+.timer {
+    font-size: 48px;
+    margin: 20px;
 }
 
-//
-function saveStudySession() {
-    let table = document.getElementById("studyTable");
-    let now = new Date().toLocaleTimeString();
+.buttons button {
+    font-size: 20px;
+    margin: 10px;
+    padding: 10px 20px;
+    cursor: pointer;
+}
 
-    let newRow = table.insertRow(-1);
-    let taskCell = newRow.insertCell(0);
-    let startCell = newRow.insertCell(1);
-    let endCell = newRow.insertCell(2);
+.time-inputs {
+    margin: 20px;
+}
 
-    taskCell.innerText = "Study Session";
-    startCell.innerText = now;
-    endCell.innerText = "--"; // Placeholder for end time
+.time-inputs input {
+    font-size: 20px;
+    padding: 5px;
+    margin: 5px;
+}
 
-    // Save end time after session ends
-    setTimeout(() => {
-        newRow.cells[2].innerText = new Date().toLocaleTimeString();
-    }, timeLeft * 1000);
+.time-inputs button {
+    font-size: 20px;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+.routine {
+    field-sizing: border-box;
+    width: 100%;    
+    font-size: 50px;
+    margin-top: 20px;
+    font-size: 20px;
+}
+
+.Daily {
+    background-color: #18ddac;
+    width: 100%;
+    padding: 60px;
+    margin: 20px;
+}
+
+.study-table {
+    background-color: chocolate;
+    width: 100%;
+    border-collapse: collapse;
+    padding: 20px;
 }
