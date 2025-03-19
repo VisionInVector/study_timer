@@ -7,31 +7,56 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <img src="https://i.ibb.co/5XK2tpCw/Shivam-01.png" alt="Shivam-01" border="0" width="100%">
-    <h1>Study Timer</h1>
-    <div class="timer" id="timer">25:00</div>
-    <div class="buttons">
-        <button onclick="startTimer()">Start</button>
-        <button onclick="pauseTimer()">Pause</button>
-        <button onclick="resetTimer()">Reset</button>
+    <div class="style">    
+        <div style="text-align: center; margin-top: auto; margin-bottom: auto;">
+            <h1>Study Timer</h1><br>
+            <div class="timer" id="timer">00:00:00</div>
+            <div class="buttons">
+                <button onclick="startTimer()">Start</button>
+                <button onclick="stopTimer()">Stop</button>
+                <button onclick="resetTimer()">Reset</button>
+            </div>
+            <div class="time-inputs">
+                <input type="number" id="hoursInput" placeholder="Hours" min="0">
+                <input type="number" id="minutesInput" placeholder="Minutes" min="0">
+                <input type="number" id="secondsInput" placeholder="Seconds" min="0"><br><br>
+                <button onclick="setTimeFromInputs()">Set Time</button>
+            </div>
+        </div>
     </div>
     <div class="routine">
-        <h2>Daily Routine</h2>
-        <ul>
-            <li>Morning Reading</li>
-            <li>Math Practice</li>
-            <li>Coding Session</li>
-            <li>Evening Review</li>
-        </ul>
-            <h2>Daily Routine</h2>
-            <table id="studyTable" border="1">
+       <div class="Daily"> <h2>Daily Routine</h2>
+            <center><table border="1">
+            <tr>
+            <th>Activity</th>
+            </tr>
+            <tr>
+            <td>Morning Reading</td>
+            </tr>
+            <tr>
+            <td>Math Practice</td>
+            </tr>
+            <tr>
+            <td>Coding Session</td>
+            </tr>
+            <tr>
+            <td>Evening Review</td>
+            </tr>
+        </table>
+    </center>
+    </div>
+          <div class="study-table">
+            <center><table id="studyTable" border="1">
                 <tr>
                     <th>Task</th>
                     <th>Start Time</th>
                     <th>End Time</th>
                 </tr>
+                <tr></tr>
             </table>
-            <button onclick="saveStudySession()">Save Session</button> 
+            </center>
+            <button onclick="saveStudySession(new Date().toLocaleTimeString())">Save Session</button> 
+            </div>
     </div>
     <script src="script.js"></script>
 </body>
